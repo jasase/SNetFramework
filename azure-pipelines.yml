@@ -63,9 +63,33 @@ steps:
     publishVstsFeed: 'e745086d-201a-4e45-8d8f-ed7088052af8'
 
 - task: NuGetCommand@2
-  displayName: "Publish to GitHub Packages"
+  displayName: "Publish to GitHub Packages (Framework)"
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/Framework*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'GitHub JaSaSe NuGet'
+
+- task: NuGetCommand@2
+  displayName: "Publish to GitHub Packages (Extension)"
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/Extension*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'GitHub JaSaSe NuGet'
+
+- task: NuGetCommand@2
+  displayName: "Publish to GitHub Packages (Service)"
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/Service*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'GitHub JaSaSe NuGet'
+
+- task: NuGetCommand@2
+  displayName: "Publish to GitHub Packages (Plugin)"
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/Plugin*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'GitHub JaSaSe NuGet'
