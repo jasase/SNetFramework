@@ -61,3 +61,10 @@ steps:
     packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: 'e745086d-201a-4e45-8d8f-ed7088052af8'
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'GitHub JaSaSe NuGet'
