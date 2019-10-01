@@ -2,6 +2,8 @@
  <PropertyGroup>
    <Deterministic>true</Deterministic>
 
+   <PackageProjectUrl>https://github.com/jasase/SNetFramework</PackageProjectUrl>
+
    <PublishRepositoryUrl>true</PublishRepositoryUrl>   
    <EmbedUntrackedSources>true</EmbedUntrackedSources>
    
