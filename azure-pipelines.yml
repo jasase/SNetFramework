@@ -54,6 +54,12 @@ steps:
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'GitVersion.NuGetVersion'
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/NuGet'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
 - task: NuGetCommand@2
   displayName: "Publish to Azure DevOps"
   inputs:
@@ -61,14 +67,6 @@ steps:
     packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: 'e745086d-201a-4e45-8d8f-ed7088052af8'
-
-- task: NuGetCommand@2
-  displayName: "Publish to GitHub Packages (Framework)"
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/Framework*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'GitHub JaSaSe NuGet'
 
 - task: NuGetCommand@2
   displayName: "Publish to GitHub Packages (Extension)"
@@ -93,3 +91,11 @@ steps:
     packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/Plugin*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'GitHub JaSaSe NuGet'
+
+- task: NuGetCommand@2
+  displayName: "Publish to GitHub Packages (Framework)"
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/Framework*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'GitHub JaSaSe NuGet'    
