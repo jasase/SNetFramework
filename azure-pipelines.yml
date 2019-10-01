@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -43,3 +44,18 @@ steps:
     includesymbols: true
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'GitVersion.NuGetVersion'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'src'
+    Contents: '**/*.nupkg'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/NuGet'
+    CleanTargetFolder: true
+    flattenFolders: true
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/*.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'GitHub JaSaSe NuGet'
