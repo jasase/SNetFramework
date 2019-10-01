@@ -45,18 +45,10 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '$(solution)'
+    packDirectory: '$(Build.ArtifactStagingDirectory)/NuGet'
     includesymbols: true
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'GitVersion.NuGetVersion'
-
-- task: CopyFiles@2
-  displayName: "Copy NuGet packages to staging directory"
-  inputs:
-    SourceFolder: 'src'
-    Contents: '**/*.nupkg'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/NuGet'
-    CleanTargetFolder: true
-    flattenFolders: true
 
 - task: DotNetCoreCLI@2
   displayName: "Publish NuGet packages"
