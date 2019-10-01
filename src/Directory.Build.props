@@ -7,8 +7,8 @@
    <PublishRepositoryUrl>true</PublishRepositoryUrl>   
    <EmbedUntrackedSources>true</EmbedUntrackedSources>
    
-   <!--<IncludeSymbols>true</IncludeSymbols>
-   <SymbolPackageFormat>snupkg</SymbolPackageFormat>-->
+   <IncludeSymbols>true</IncludeSymbols>
+   <SymbolPackageFormat>snupkg</SymbolPackageFormat>
    
  </PropertyGroup>
 

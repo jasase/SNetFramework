@@ -50,8 +50,7 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '$(solution)'
-    packDirectory: '$(Build.ArtifactStagingDirectory)/NuGet'
-    includesymbols: true
+    packDirectory: '$(Build.ArtifactStagingDirectory)/NuGet'    
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'GitVersion.NuGetVersion'
 
@@ -62,14 +61,6 @@ steps:
     packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: 'e745086d-201a-4e45-8d8f-ed7088052af8'
-
-- task: DotNetCoreCLI@2
-  displayName: "Publish to GitHub Packages (DotNet Core)"
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/*.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'GitHub JaSaSe NuGet'
 
 - task: NuGetCommand@2
   displayName: "Publish to GitHub Packages"
