@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Topshelf" Version="4.2.1" />
+    <PackageReference Include="Topshelf.NLog" Version="4.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Extensions\Extension.EnvironmentParameterDocker\Extension.EnvironmentParameterDocker.csproj" />
+    <ProjectReference Include="..\..\Extensions\Extension.Event\Extension.Event.csproj" />
+    <ProjectReference Include="..\..\Extensions\Extension.LoggingNLog\Extension.LoggingNLog.csproj" />
+    <ProjectReference Include="..\..\Framework\Framework.Abstraction\Framework.Abstraction.csproj" />
+    <ProjectReference Include="..\..\Framework\Framework.Core\Framework.Core.csproj" />
+    <ProjectReference Include="..\ServiceHost.Abstraction\ServiceHost.Abstraction.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
