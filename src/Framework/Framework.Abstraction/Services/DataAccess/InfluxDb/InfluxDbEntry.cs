@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Framework.Contracts.Services.DataAccess.InfluxDb
+namespace Framework.Abstraction.Services.DataAccess.InfluxDb
 {
     public class InfluxDbEntry
     {

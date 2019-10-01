@@ -1,5 +1,5 @@
-﻿using Framework.Contracts.Extension;
-using Framework.Contracts.Services.XmlToObject;
+﻿using Framework.Abstraction.Extension;
+using Framework.Abstraction.Services.XmlToObject;
 using System;
 using System.Collections.Generic;
 using System.IO;

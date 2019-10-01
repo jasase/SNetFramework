@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Framework.Contracts.Plugins
+namespace Framework.Abstraction.Plugins
 {
     public class PluginDescription
     {

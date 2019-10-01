@@ -1,11 +1,11 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 using System;
-using Framework.Contracts.Services;
+using Framework.Abstraction.Services;
 using System.Linq.Expressions;
-using Framework.Common.Services.Validator.DateTimeValidators;
+using Framework.Core.Services.Validator.DateTimeValidators;
 
-namespace Framework.Common.Services.DataAccess.EntityDescriptions
+namespace Framework.Core.Services.DataAccess.EntityDescriptions
 {
     public class DateTimePropertyDescription<TEntity> : PropertyDescription<TEntity, DateTime>, IDateTimePropertyDescription<TEntity>
         where TEntity : Entity

@@ -1,8 +1,8 @@
 ﻿using System.IO;
 using System.Reflection;
-using Framework.Contracts.Extension;
+using Framework.Abstraction.Extension;
 
-namespace EnvironmentPlugin
+namespace Extension.EnvironmentParameterDocker
 {
     public class EnvironmentParameter : IEnvironmentParameters
     {

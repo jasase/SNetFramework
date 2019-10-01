@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading;
-using Framework.Common.IocContainer;
-using Framework.Contracts;
-using Framework.Contracts.Extension;
-using Framework.Contracts.IocContainer;
-using Framework.Contracts.Plugins;
+using Framework.Core.IocContainer;
+using Framework.Abstraction;
+using Framework.Abstraction.Extension;
+using Framework.Abstraction.IocContainer;
+using Framework.Abstraction.Plugins;
 using StructureMap;
 
-namespace Framework.Common
+namespace Framework.Core
 {
     public class Bootstrap
     {
@@ -113,7 +113,7 @@ namespace Framework.Common
         {
             StructureMapContainer = new Container();
             var dependencyResolver = new StructureMapDependencyResolver(StructureMapContainer);
-            Contracts.IocContainer.DependencyResolver.Setup(dependencyResolver);
+            Abstraction.IocContainer.DependencyResolver.Setup(dependencyResolver);
             DependencyResolver = dependencyResolver;
             DependencyResolverConfigurator = dependencyResolver;
 

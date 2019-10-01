@@ -1,16 +1,16 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess;
 using System;
 using System.Collections.Generic;
-using Framework.Contracts.Extension;
-using Framework.Contracts.Messages.EntityMessages;
-using Framework.Contracts.Helper;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
-using Framework.Common.Services.DataAccess.EntityDescriptions;
+using Framework.Abstraction.Extension;
+using Framework.Abstraction.Messages.EntityMessages;
+using Framework.Abstraction.Helper;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
+using Framework.Core.Services.DataAccess.EntityDescriptions;
 using System.Linq;
-using Framework.Common.Helper;
+using Framework.Core.Helper;
 
-namespace Framework.Common.Services.DataAccess
+namespace Framework.Core.Services.DataAccess
 {
     public abstract class EntityManagerWithDto<TEntity, TDto> : IManager<TEntity>
         where TEntity : Entity

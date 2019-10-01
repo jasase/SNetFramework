@@ -1,4 +1,4 @@
-﻿namespace Framework.Common.Helper
+﻿namespace Framework.Core.Helper
 {
     public static class EqualsExtension
     {

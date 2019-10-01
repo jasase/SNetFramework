@@ -1,4 +1,4 @@
-﻿namespace Framework.Contracts.Services.Scheduling
+﻿namespace Framework.Abstraction.Services.Scheduling
 {
     public interface ISchedulingPlan
     {

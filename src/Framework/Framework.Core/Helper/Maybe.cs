@@ -1,7 +1,7 @@
-﻿using Framework.Contracts.Helper;
+﻿using Framework.Abstraction.Helper;
 using System;
 
-namespace Framework.Common.Helper
+namespace Framework.Core.Helper
 {
     public class Maybe<T> : IMaybe<T>
         where T : class

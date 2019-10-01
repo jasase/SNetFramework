@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Framework.Common.Exceptions
+namespace Framework.Core.Exceptions
 {
     [Serializable]
     public class InvalidServiceConfigurationException : Exception

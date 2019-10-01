@@ -1,7 +1,7 @@
 ﻿using System;
-using Framework.Contracts.Services.Scheduling;
+using Framework.Abstraction.Services.Scheduling;
 
-namespace Framework.Common.Scheduling
+namespace Framework.Core.Scheduling
 {
     public class DailyPlan : IDailyPlan
 

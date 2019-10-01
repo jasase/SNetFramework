@@ -1,13 +1,13 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Collections;
-using Framework.Contracts.Helper;
+using Framework.Abstraction.Helper;
 using System.Linq;
-using Framework.Common.Helper;
+using Framework.Core.Helper;
 
-namespace Framework.Common.Services.DataAccess
+namespace Framework.Core.Services.DataAccess
 {
     public abstract class EntityRepositoryWithDto<TEntity, TDto> : IRepository<TEntity>
         where TEntity : Entity

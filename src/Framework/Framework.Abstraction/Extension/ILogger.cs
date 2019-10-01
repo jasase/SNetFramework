@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Framework.Contracts.Extension
+namespace Framework.Abstraction.Extension
 {
     public interface ILogger
     {

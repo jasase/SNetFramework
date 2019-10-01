@@ -1,4 +1,4 @@
-﻿namespace Framework.Contracts.Plugins
+﻿namespace Framework.Abstraction.Plugins
 {
   public interface IGeneralPlugin : IPlugin
   {

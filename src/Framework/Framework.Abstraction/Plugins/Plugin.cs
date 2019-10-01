@@ -1,10 +1,10 @@
 ﻿using System;
-using Framework.Contracts.Messages;
-using Framework.Contracts.Extension;
-using Framework.Contracts.IocContainer;
+using Framework.Abstraction.Messages;
+using Framework.Abstraction.Extension;
+using Framework.Abstraction.IocContainer;
 using System.Collections.Generic;
 
-namespace Framework.Contracts.Plugins
+namespace Framework.Abstraction.Plugins
 {
     public abstract class Plugin : IPlugin
     {

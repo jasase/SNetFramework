@@ -1,7 +1,7 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 
-namespace Framework.Common.Services.Validator.ReferenceValidators
+namespace Framework.Core.Services.Validator.ReferenceValidators
 {
     public class BaseReferenceValidator<TEntity> : BaseValidator<EntityReference, TEntity>
         where TEntity : Entity

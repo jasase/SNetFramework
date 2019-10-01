@@ -1,6 +1,6 @@
-﻿using Framework.Contracts.Entities;
+﻿using Framework.Abstraction.Entities;
 
-namespace Framework.Common.Services.Validator.StringValidators
+namespace Framework.Core.Services.Validator.StringValidators
 {
     public class StringNothingValidator<TEntity> : BaseStringValidator<TEntity>
         where TEntity : Entity

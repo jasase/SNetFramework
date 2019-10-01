@@ -1,7 +1,7 @@
-﻿using Framework.Contracts.Services.Scheduling;
+﻿using Framework.Abstraction.Services.Scheduling;
 using System;
 
-namespace Framework.Common.Scheduling
+namespace Framework.Core.Scheduling
 {
     public class PollingPlan : IPollingPlan
     {

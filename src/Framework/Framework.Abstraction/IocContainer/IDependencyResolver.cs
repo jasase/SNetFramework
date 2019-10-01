@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Framework.Contracts.Helper;
+using Framework.Abstraction.Helper;
 using System;
 
-namespace Framework.Contracts.IocContainer
+namespace Framework.Abstraction.IocContainer
 {
     public interface IDependencyResolver
     {        

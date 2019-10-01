@@ -1,10 +1,10 @@
-﻿using Framework.Contracts.Entities;
+﻿using Framework.Abstraction.Entities;
 using System;
-using Framework.Contracts.Services;
+using Framework.Abstraction.Services;
 using System.Linq.Expressions;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 
-namespace Framework.Common.Services.DataAccess.EntityDescriptions
+namespace Framework.Core.Services.DataAccess.EntityDescriptions
 {
     public class EntityReferencePropertyDescription<TEntity, TEntityReferenced>
         : PropertyDescription<TEntity, EntityReference>,

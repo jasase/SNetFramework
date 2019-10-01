@@ -1,6 +1,6 @@
-﻿using Framework.Contracts.Entities;
+﻿using Framework.Abstraction.Entities;
 
-namespace Framework.Common.Services.Validator.IntegerValidators
+namespace Framework.Core.Services.Validator.IntegerValidators
 {
     public abstract class IntegerValidator<TEntity> : BaseValidator<int, TEntity>
         where TEntity : Entity

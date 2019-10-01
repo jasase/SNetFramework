@@ -1,8 +1,8 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Extension.EventService;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Extension.EventService;
 using System;
 
-namespace Framework.Contracts.Messages.EntityMessages
+namespace Framework.Abstraction.Messages.EntityMessages
 {
     public abstract class EntityMessage : EventMessage
     {

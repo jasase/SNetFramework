@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Framework.Contracts.Services.Docker
+namespace Framework.Abstraction.Services.Docker
 {
     public interface IDockerService
     {

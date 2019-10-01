@@ -1,6 +1,6 @@
-﻿using Framework.Contracts.Entities;
+﻿using Framework.Abstraction.Entities;
 
-namespace Framework.Contracts.Services.InitialData
+namespace Framework.Abstraction.Services.InitialData
 {
     public interface IInitialDataService
     {

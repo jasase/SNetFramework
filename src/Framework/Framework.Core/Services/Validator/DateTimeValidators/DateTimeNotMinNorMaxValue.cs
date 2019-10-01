@@ -1,8 +1,8 @@
 ﻿using System;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
-using Framework.Contracts.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
+using Framework.Abstraction.Entities;
 
-namespace Framework.Common.Services.Validator.DateTimeValidators
+namespace Framework.Core.Services.Validator.DateTimeValidators
 {
     public class DateTimeNotMinNorMaxValueValidator<TEntity> : DateTimeValidator<TEntity>
                 where TEntity : Entity

@@ -1,4 +1,4 @@
-﻿namespace Framework.Contracts.Services.Messaging
+﻿namespace Framework.Abstraction.Services.Messaging
 {
     public interface IMqttService
     {

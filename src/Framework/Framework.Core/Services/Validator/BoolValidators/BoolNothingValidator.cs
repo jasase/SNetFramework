@@ -1,7 +1,7 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 
-namespace Framework.Common.Services.Validator.BoolValidators
+namespace Framework.Core.Services.Validator.BoolValidators
 {
     public class BoolNothingValidator<TEntity> : BaseBoolValidator<TEntity>
         where TEntity : Entity

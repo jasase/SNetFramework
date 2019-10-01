@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Framework.Contracts.Extension
+namespace Framework.Abstraction.Extension
 {
     public interface IEnvironmentParameters
     {

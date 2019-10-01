@@ -1,8 +1,8 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.IocContainer.Registrations;
-using Framework.Contracts.Services.DataAccess;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.IocContainer.Registrations;
+using Framework.Abstraction.Services.DataAccess;
 
-namespace Framework.Contracts.IocContainer
+namespace Framework.Abstraction.IocContainer
 {
     public interface IDependencyResolverRegistrationVisitor
     {

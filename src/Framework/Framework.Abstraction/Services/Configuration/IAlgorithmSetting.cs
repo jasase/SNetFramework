@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framework.Contracts.Services.Configuration
+namespace Framework.Abstraction.Services.Configuration
 {
     public interface IAlgorithmSetting
     {

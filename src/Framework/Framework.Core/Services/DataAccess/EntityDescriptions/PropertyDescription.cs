@@ -1,11 +1,11 @@
 ﻿using System;
-using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 using System.Linq.Expressions;
-using Framework.Contracts.Services;
-using Framework.Common.Helper;
+using Framework.Abstraction.Services;
+using Framework.Core.Helper;
 
-namespace Framework.Common.Services.DataAccess.EntityDescriptions
+namespace Framework.Core.Services.DataAccess.EntityDescriptions
 {
     public abstract class PropertyDescription<TEntity> : IPropertyDescription<TEntity>
         where TEntity : Entity

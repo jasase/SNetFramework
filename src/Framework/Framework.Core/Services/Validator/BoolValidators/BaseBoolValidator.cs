@@ -1,6 +1,6 @@
-﻿using Framework.Contracts.Entities;
+﻿using Framework.Abstraction.Entities;
 
-namespace Framework.Common.Services.Validator.BoolValidators
+namespace Framework.Core.Services.Validator.BoolValidators
 {
     public abstract class BaseBoolValidator<TEntity> : BaseValidator<bool, TEntity>
         where TEntity : Entity

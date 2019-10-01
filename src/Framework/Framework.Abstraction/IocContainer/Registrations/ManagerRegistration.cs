@@ -1,8 +1,8 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess;
 using System;
 
-namespace Framework.Contracts.IocContainer.Registrations
+namespace Framework.Abstraction.IocContainer.Registrations
 {
     public abstract class ManagerRegistration : DependencyResolverRegistration
     {

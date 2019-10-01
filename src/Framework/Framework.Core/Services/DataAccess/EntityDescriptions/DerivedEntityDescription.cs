@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 using System.Linq;
 
-namespace Framework.Common.Services.DataAccess.EntityDescriptions
+namespace Framework.Core.Services.DataAccess.EntityDescriptions
 {
     public class DerivedEntityDescription<TEntityBase, TEntityDerived> : IDerivedEntityDescription<TEntityBase>
         where TEntityBase : Entity

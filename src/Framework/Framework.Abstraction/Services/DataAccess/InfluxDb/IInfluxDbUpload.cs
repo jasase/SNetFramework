@@ -1,4 +1,4 @@
-﻿namespace Framework.Contracts.Services.DataAccess.InfluxDb
+﻿namespace Framework.Abstraction.Services.DataAccess.InfluxDb
 {
     public interface IInfluxDbUpload
     {

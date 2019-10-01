@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Framework.Contracts.Entities;
+using Framework.Abstraction.Entities;
 
-namespace Framework.Contracts.Services.Db
+namespace Framework.Abstraction.Services.Db
 {
   public interface IDbSession
   {

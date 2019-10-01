@@ -1,10 +1,10 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Framework.Common.Services.DataAccess.EntityDescriptions
+namespace Framework.Core.Services.DataAccess.EntityDescriptions
 {
     public class EntityDescription<TEntity> : IEntityDescription<TEntity>
         where TEntity : Entity

@@ -1,12 +1,12 @@
-﻿using Framework.Contracts.Extension;
-using Framework.Contracts.IocContainer;
-using Framework.Contracts.Plugins;
+﻿using Framework.Abstraction.Extension;
+using Framework.Abstraction.IocContainer;
+using Framework.Abstraction.Plugins;
 
-namespace EnvironmentPlugin
+namespace Extension.EnvironmentParameterDocker
 {
     public class EnvironmentParameterExtension : IFrameworkExtension
     {        
-        public string Name => "EnvironmentParameterExtensionDocker";
+        public string Name => "Extension.EnvironmentParameterDocker";
 
         public void Register(IDependencyResolverConfigurator configurator, IDependencyResolver resolver)
         {

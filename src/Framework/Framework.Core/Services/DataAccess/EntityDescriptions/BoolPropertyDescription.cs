@@ -1,10 +1,10 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 using System;
-using Framework.Contracts.Services;
+using Framework.Abstraction.Services;
 using System.Linq.Expressions;
 
-namespace Framework.Common.Services.DataAccess.EntityDescriptions
+namespace Framework.Core.Services.DataAccess.EntityDescriptions
 {
     public class BoolPropertyDescription<TEntity> : PropertyDescription<TEntity, bool>,
                                                     IBoolPropertyDescription<TEntity>

@@ -1,7 +1,7 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 
-namespace Framework.Common.Services.Validator
+namespace Framework.Core.Services.Validator
 {
     public class EverythingValidValidator<TValidate, TEntity> : BaseValidator<TValidate, TEntity>
         where TEntity : Entity

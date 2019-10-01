@@ -1,7 +1,7 @@
 ﻿using System;
-using Framework.Contracts.Extension.EventService;
+using Framework.Abstraction.Extension.EventService;
 
-namespace Framework.Contracts.Extension
+namespace Framework.Abstraction.Extension
 {
   public interface IEventService
   {

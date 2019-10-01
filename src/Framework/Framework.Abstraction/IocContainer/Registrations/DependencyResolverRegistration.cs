@@ -1,6 +1,6 @@
 using System;
 
-namespace Framework.Contracts.IocContainer
+namespace Framework.Abstraction.IocContainer
 {
     public abstract class DependencyResolverRegistration
     {

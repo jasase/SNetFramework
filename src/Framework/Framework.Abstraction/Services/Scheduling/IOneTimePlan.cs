@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Framework.Contracts.Services.Scheduling
+namespace Framework.Abstraction.Services.Scheduling
 {
     public interface IOneTimePlan : ISchedulingPlan
     {

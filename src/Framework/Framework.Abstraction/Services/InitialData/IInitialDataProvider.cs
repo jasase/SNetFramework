@@ -1,7 +1,7 @@
-﻿using Framework.Contracts.Entities;
+﻿using Framework.Abstraction.Entities;
 using System.Collections.Generic;
 
-namespace Framework.Contracts.Services.InitialData
+namespace Framework.Abstraction.Services.InitialData
 {
     public interface IInitialDataProvider<T>
         where T : Entity

@@ -1,7 +1,7 @@
-﻿using Framework.Contracts.Entities;
+﻿using Framework.Abstraction.Entities;
 using System;
 
-namespace Framework.Contracts.Services.DataAccess.EntityDescriptions
+namespace Framework.Abstraction.Services.DataAccess.EntityDescriptions
 {
     public interface IDateTimePropertyDescription : IPropertyDescription
     {

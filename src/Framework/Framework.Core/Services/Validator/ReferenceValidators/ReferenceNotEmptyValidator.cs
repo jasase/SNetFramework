@@ -1,6 +1,6 @@
-﻿using Framework.Contracts.Entities;
+﻿using Framework.Abstraction.Entities;
 
-namespace Framework.Common.Services.Validator.ReferenceValidators
+namespace Framework.Core.Services.Validator.ReferenceValidators
 {
     public class ReferenceNotEmptyValidator<TEntity> : BaseReferenceValidator<TEntity>
         where TEntity : Entity

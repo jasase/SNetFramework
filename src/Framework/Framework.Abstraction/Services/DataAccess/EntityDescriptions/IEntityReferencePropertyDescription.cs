@@ -1,8 +1,8 @@
 ﻿
 using System;
-using Framework.Contracts.Entities;
+using Framework.Abstraction.Entities;
 
-namespace Framework.Contracts.Services.DataAccess.EntityDescriptions
+namespace Framework.Abstraction.Services.DataAccess.EntityDescriptions
 {
     public interface IEntityReferencePropertyDescription : IPropertyDescription
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Framework.Contracts.Extension.EventService
+namespace Framework.Abstraction.Extension.EventService
 {
     public class EventMessage
   {

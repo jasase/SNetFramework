@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Framework.Contracts.Services
+namespace Framework.Abstraction.Services
 {
     public interface IBackupDirectoryService
     {

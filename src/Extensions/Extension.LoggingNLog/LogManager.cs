@@ -1,4 +1,4 @@
-﻿using Framework.Contracts.Extension;
+﻿using Framework.Abstraction.Extension;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using System;
@@ -24,12 +24,12 @@ namespace Extension.LoggingNLog
         public void Dispose()
                 => _loggerFactory.Dispose();
 
-        public Framework.Contracts.Extension.ILogger GetLogger(Type loggedClass)
+        public Framework.Abstraction.Extension.ILogger GetLogger(Type loggedClass)
         {
             var nlogLogger = NLog.LogManager.GetLogger(loggedClass.FullName);
             return new Logger(nlogLogger);
         }
 
-        public Framework.Contracts.Extension.ILogger GetLogger<T>() => GetLogger(typeof(T));
+        public Framework.Abstraction.Extension.ILogger GetLogger<T>() => GetLogger(typeof(T));
     }
 }

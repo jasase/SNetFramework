@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Framework.Contracts.Entities
+namespace Framework.Abstraction.Entities
 {
     public abstract class EqualableDataObject
     {                       

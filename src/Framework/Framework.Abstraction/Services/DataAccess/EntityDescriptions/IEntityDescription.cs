@@ -1,9 +1,9 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 using System;
 using System.Collections.Generic;
 
-namespace Framework.Contracts.Services.DataAccess.EntityDescriptions
+namespace Framework.Abstraction.Services.DataAccess.EntityDescriptions
 {
     public interface IEntityDescription : IBaseDescription
     {

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Framework.Common.Helper;
-using Framework.Contracts.Helper;
-using Framework.Contracts.IocContainer;
-using Framework.Contracts.IocContainer.Registrations;
-using Framework.Contracts.Services.DataAccess;
+using Framework.Core.Helper;
+using Framework.Abstraction.Helper;
+using Framework.Abstraction.IocContainer;
+using Framework.Abstraction.IocContainer.Registrations;
+using Framework.Abstraction.Services.DataAccess;
 using StructureMap;
 
-namespace Framework.Common.IocContainer
+namespace Framework.Core.IocContainer
 {
     public class StructureMapDependencyResolver : IDependencyResolver, IDependencyResolverConfigurator
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace Framework.Contracts.Services.XmlToObject
+namespace Framework.Abstraction.Services.XmlToObject
 {
     public interface IXmlToObject
     {

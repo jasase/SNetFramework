@@ -1,11 +1,11 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 using System;
 using System.Linq.Expressions;
-using Framework.Contracts.Services;
-using Framework.Common.Services.Validator.StringValidators;
+using Framework.Abstraction.Services;
+using Framework.Core.Services.Validator.StringValidators;
 
-namespace Framework.Common.Services.DataAccess.EntityDescriptions
+namespace Framework.Core.Services.DataAccess.EntityDescriptions
 {
     public class StringPropertyDescription<TEntity> : PropertyDescription<TEntity, string>, IStringPropertyDescription<TEntity>
         where TEntity : Entity

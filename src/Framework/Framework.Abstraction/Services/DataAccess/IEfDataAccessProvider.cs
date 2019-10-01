@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Framework.Contracts.Services.DataAccess
+namespace Framework.Abstraction.Services.DataAccess
 {
     public interface IEfDataAccessProvider : IDataAccessProvider
     {

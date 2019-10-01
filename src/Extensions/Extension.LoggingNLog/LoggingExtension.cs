@@ -1,13 +1,13 @@
-﻿using Framework.Contracts.Extension;
-using Framework.Contracts.IocContainer;
-using Framework.Contracts.Plugins;
+﻿using Framework.Abstraction.Extension;
+using Framework.Abstraction.IocContainer;
+using Framework.Abstraction.Plugins;
 using NLog.Targets;
 
 namespace Extension.LoggingNLog
 {
     public class LoggingExtension : IFrameworkExtension
     {
-        public string Name => "Logging-NLog";
+        public string Name => "Extension.LoggingNLog";
 
         public void Register(IDependencyResolverConfigurator configurator, IDependencyResolver resolver)
         {

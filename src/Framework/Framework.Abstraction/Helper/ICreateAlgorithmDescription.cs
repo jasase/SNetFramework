@@ -1,4 +1,4 @@
-﻿namespace Framework.Contracts.Helper
+﻿namespace Framework.Abstraction.Helper
 {
     public interface ICreateAlgorithmDescription
     { }

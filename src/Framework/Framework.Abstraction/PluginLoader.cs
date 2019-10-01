@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Framework.Contracts.Plugins;
-using Framework.Contracts.Extension;
-using Framework.Contracts.IocContainer;
+using Framework.Abstraction.Plugins;
+using Framework.Abstraction.Extension;
+using Framework.Abstraction.IocContainer;
 
-namespace Framework.Contracts
+namespace Framework.Abstraction
 {
     public class PluginLoader
     {

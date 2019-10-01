@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Framework.Contracts.Entities;
-using Framework.Contracts.Services;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 
-namespace Framework.Common.Services.DataAccess.EntityDescriptions
+namespace Framework.Core.Services.DataAccess.EntityDescriptions
 {
     public class EntityPropertyDescription<TEntity, TOtherEntity> :
         PropertyDescription<TEntity, TOtherEntity>,

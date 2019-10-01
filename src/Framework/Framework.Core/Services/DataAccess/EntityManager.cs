@@ -1,8 +1,8 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess;
-using Framework.Contracts.Extension;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess;
+using Framework.Abstraction.Extension;
 
-namespace Framework.Common.Services.DataAccess
+namespace Framework.Core.Services.DataAccess
 {
     public abstract class EntityManager<TEntity> : EntityManagerWithDto<TEntity, TEntity>
         where TEntity : Entity

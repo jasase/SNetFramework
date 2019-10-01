@@ -1,4 +1,4 @@
-﻿namespace Framework.Contracts.IocContainer
+﻿namespace Framework.Abstraction.IocContainer
 {
     public interface IDependencyResolverConfigurator
     {

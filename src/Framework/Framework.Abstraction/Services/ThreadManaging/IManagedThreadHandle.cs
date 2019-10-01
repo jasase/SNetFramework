@@ -1,4 +1,4 @@
-﻿namespace Framework.Contracts.Services.ThreadManaging
+﻿namespace Framework.Abstraction.Services.ThreadManaging
 {
     public interface IManagedThreadHandle
     {

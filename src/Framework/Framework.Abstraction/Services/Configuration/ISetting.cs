@@ -1,4 +1,4 @@
-﻿namespace Framework.Contracts.Extension
+﻿namespace Framework.Abstraction.Extension
 {
     public interface ISetting
     {

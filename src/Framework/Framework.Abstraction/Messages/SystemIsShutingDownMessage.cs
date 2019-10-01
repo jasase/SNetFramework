@@ -1,6 +1,6 @@
-﻿using Framework.Contracts.Extension.EventService;
+﻿using Framework.Abstraction.Extension.EventService;
 
-namespace Framework.Contracts.Messages
+namespace Framework.Abstraction.Messages
 {
     public class SystemIsShutingDownMessage : EventMessage
     {

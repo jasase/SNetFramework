@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using Framework.Contracts;
-using Framework.Contracts.Extension;
+using Framework.Abstraction;
+using Framework.Abstraction.Extension;
 
-namespace EnvironmentPlugin
+namespace Extension.EnvironmentParameter
 {
     public class EnvironmentParameter : IEnvironmentParameters
     {

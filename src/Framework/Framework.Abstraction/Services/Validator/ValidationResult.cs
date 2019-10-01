@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framework.Contracts.Services.DataAccess.EntityDescriptions
+namespace Framework.Abstraction.Services.DataAccess.EntityDescriptions
 {
     public class ValidationResult
     {

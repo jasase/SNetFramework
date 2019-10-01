@@ -1,4 +1,4 @@
-﻿namespace Framework.Contracts.Services.Db
+﻿namespace Framework.Abstraction.Services.Db
 {
   public interface IDbSessionFactory
   {

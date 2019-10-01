@@ -1,6 +1,6 @@
-﻿using Framework.Contracts.IocContainer;
+﻿using Framework.Abstraction.IocContainer;
 
-namespace Framework.Contracts.Plugins
+namespace Framework.Abstraction.Plugins
 {
     public interface IFrameworkExtension
     {

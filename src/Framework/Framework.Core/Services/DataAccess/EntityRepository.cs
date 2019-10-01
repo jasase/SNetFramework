@@ -1,7 +1,7 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess;
 
-namespace Framework.Common.Services.DataAccess
+namespace Framework.Core.Services.DataAccess
 {
     public abstract class EntityRepository<TEntity> : EntityRepositoryWithDto<TEntity, TEntity>
         where TEntity : Entity

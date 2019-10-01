@@ -1,11 +1,11 @@
-﻿using Framework.Common.Services.Validator;
-using Framework.Contracts.Entities;
-using Framework.Contracts.Services;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+﻿using Framework.Core.Services.Validator;
+using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 using System;
 using System.Linq.Expressions;
 
-namespace Framework.Common.Services.DataAccess.EntityDescriptions
+namespace Framework.Core.Services.DataAccess.EntityDescriptions
 {
     public class IntegerPropertyDescription<TEntity> : PropertyDescription<TEntity, int>, IIntegerPropertyDescription<TEntity>
         where TEntity : Entity

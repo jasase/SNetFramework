@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Framework.Common.Helper
+namespace Framework.Core.Helper
 {
     public static class ExpressionHelper
     {

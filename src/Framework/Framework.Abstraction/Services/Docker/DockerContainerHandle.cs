@@ -1,4 +1,4 @@
-﻿namespace Framework.Contracts.Services.Docker
+﻿namespace Framework.Abstraction.Services.Docker
 {
     public class DockerContainerHandle
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Framework.Contracts.IocContainer.Registrations
+namespace Framework.Abstraction.IocContainer.Registrations
 {
     public class ServiceInstanceRegistration : DependencyResolverRegistration
     {

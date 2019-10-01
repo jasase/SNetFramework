@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Framework.Contracts.Services.DataAccess.InfluxDb
+namespace Framework.Abstraction.Services.DataAccess.InfluxDb
 {
     public class InfluxDbQueryResult
     {

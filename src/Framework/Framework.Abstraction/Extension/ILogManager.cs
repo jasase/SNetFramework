@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
 
-namespace Framework.Contracts.Extension
+namespace Framework.Abstraction.Extension
 {
     public interface ILogManager : ILoggerFactory, ILoggerProvider
     {

@@ -1,7 +1,7 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 
-namespace Framework.Contracts.Services
+namespace Framework.Abstraction.Services
 {
     public interface IValidator<in TValidate>
     {

@@ -1,12 +1,9 @@
-﻿using Framework.Contracts.Extension;
-using Framework.Contracts.Extension.EventService;
+﻿using Framework.Abstraction.Extension;
+using Framework.Abstraction.Extension.EventService;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EventExtension
+namespace Extension.Event
 {
     //TODO Multithreading Safe machen
     public class SpecificEventMessageManager<TMessage>
@@ -62,7 +59,7 @@ namespace EventExtension
             foreach (var reciever in _reciever)
             {
                 reciever.Update(message);
-            }            
+            }
         }
     }
 }

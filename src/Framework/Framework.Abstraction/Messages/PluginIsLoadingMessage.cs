@@ -1,7 +1,7 @@
-﻿using Framework.Contracts.Plugins;
-using Framework.Contracts.Extension.EventService;
+﻿using Framework.Abstraction.Plugins;
+using Framework.Abstraction.Extension.EventService;
 
-namespace Framework.Contracts.Messages
+namespace Framework.Abstraction.Messages
 {
     public class PluginIsLoadingMessage : EventMessage
     {

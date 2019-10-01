@@ -1,7 +1,7 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Services.DataAccess.EntityDescriptions;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
 
-namespace Framework.Common.Services.Validator.StringValidators
+namespace Framework.Core.Services.Validator.StringValidators
 {
     public abstract class BaseStringValidator<TEntity> : BaseValidator<string, TEntity>
         where TEntity : Entity

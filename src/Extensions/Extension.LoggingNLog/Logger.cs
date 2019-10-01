@@ -1,4 +1,4 @@
-﻿using Framework.Contracts.Extension;
+﻿using Framework.Abstraction.Extension;
 using LoggingExtension;
 using System;
 using System.Collections.Generic;

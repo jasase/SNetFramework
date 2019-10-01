@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Framework.Contracts.Helper
+namespace Framework.Abstraction.Helper
 {
     public interface IMaybe<out T>
       where T : class

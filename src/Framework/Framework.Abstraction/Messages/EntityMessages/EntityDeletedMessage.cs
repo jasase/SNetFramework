@@ -1,7 +1,7 @@
 ﻿using System;
-using Framework.Contracts.Entities;
+using Framework.Abstraction.Entities;
 
-namespace Framework.Contracts.Messages.EntityMessages
+namespace Framework.Abstraction.Messages.EntityMessages
 {
     public class EntityDeletedMessage : EntityMessage
     {

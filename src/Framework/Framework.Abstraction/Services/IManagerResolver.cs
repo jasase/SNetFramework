@@ -1,10 +1,10 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Helper;
-using Framework.Contracts.Services.DataAccess;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Helper;
+using Framework.Abstraction.Services.DataAccess;
 using System;
 using System.Collections.Generic;
 
-namespace Framework.Contracts.Services
+namespace Framework.Abstraction.Services
 {
     public interface IManagerResolver
     {

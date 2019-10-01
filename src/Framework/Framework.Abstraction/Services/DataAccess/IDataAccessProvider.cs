@@ -1,9 +1,9 @@
-﻿using Framework.Contracts.Entities;
-using Framework.Contracts.Helper;
+﻿using Framework.Abstraction.Entities;
+using Framework.Abstraction.Helper;
 using System;
 using System.Collections.Generic;
 
-namespace Framework.Contracts.Services.DataAccess
+namespace Framework.Abstraction.Services.DataAccess
 {
     public interface IDataAccessProvider
     {

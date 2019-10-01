@@ -1,12 +1,12 @@
-﻿using Framework.Contracts.Extension;
-using Framework.Contracts.IocContainer;
-using Framework.Contracts.Plugins;
+﻿using Framework.Abstraction.Extension;
+using Framework.Abstraction.IocContainer;
+using Framework.Abstraction.Plugins;
 
-namespace EnvironmentPlugin
+namespace Extension.EnvironmentParameter
 {
     public class EnvironmentParameterExtension : IFrameworkExtension
     {        
-        public string Name => "EnvironmentParameterExtension";
+        public string Name => "Extension.EnvironmentParameter";
 
         public void Register(IDependencyResolverConfigurator configurator, IDependencyResolver resolver)
         {

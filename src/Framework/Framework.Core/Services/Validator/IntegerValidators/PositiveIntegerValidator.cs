@@ -1,7 +1,7 @@
-﻿using Framework.Contracts.Services.DataAccess.EntityDescriptions;
-using Framework.Contracts.Entities;
+﻿using Framework.Abstraction.Services.DataAccess.EntityDescriptions;
+using Framework.Abstraction.Entities;
 
-namespace Framework.Common.Services.Validator.IntegerValidators
+namespace Framework.Core.Services.Validator.IntegerValidators
 {
     public class PositiveIntegerValidator<TEntity> : IntegerValidator<TEntity>
                 where TEntity : Entity
