@@ -23,21 +23,25 @@ steps:
     runtime: 'core'
 
 - task: UseDotNet@2
+  displayName: 'Install .Net Core'
   inputs:
     packageType: 'sdk'
     version: '3.x'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Restore project dependencies'
   inputs:
     command: 'restore'
     projects: '$(solution)'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Build'
   inputs:
     command: 'build'
     projects: '$(solution)'
 
 - task: DotNetCoreCLI@2
+  displayName: "Pack NuGet packages"
   inputs:
     command: 'pack'
     packagesToPack: '$(solution)'
@@ -46,6 +50,7 @@ steps:
     versionEnvVar: 'GitVersion.NuGetVersion'
 
 - task: CopyFiles@2
+  displayName: "Copy NuGet packages to staging directory"
   inputs:
     SourceFolder: 'src'
     Contents: '**/*.nupkg'
@@ -54,6 +59,7 @@ steps:
     flattenFolders: true
 
 - task: DotNetCoreCLI@2
+  displayName: "Publish NuGet packages"
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/*.nupkg'
