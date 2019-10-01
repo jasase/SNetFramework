@@ -22,6 +22,10 @@ steps:
   inputs:
     runtime: 'core'
 
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: 
+
 - task: UseDotNet@2
   displayName: 'Install .Net Core'
   inputs:
