@@ -50,10 +50,9 @@ steps:
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'GitVersion.NuGetVersion'
 
-- task: DotNetCoreCLI@2
-  displayName: "Publish NuGet packages"
+- task: NuGetCommand@2
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/*.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/NuGet/*.nupkg;!$(Build.ArtifactStagingDirectory)/NuGet/*.symbols.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'GitHub JaSaSe NuGet'
