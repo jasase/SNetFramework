@@ -1,0 +1,23 @@
+﻿
+using System;
+using Framework.Contracts.Entities;
+
+namespace Framework.Contracts.Services.DataAccess.EntityDescriptions
+{
+    public interface IEntityReferencePropertyDescription : IPropertyDescription
+    {
+        Type DestinationType { get; }
+        IValidator<EntityReference> Validator { get; }
+        EntityReference GetReferenceValue(Entity entity);
+        void SetReferenceValue(EntityReference value, Entity entity);
+        ValidationResult ValidateValue(Entity entity, EntityReference value);
+    }
+
+    public interface IEntityReferencePropertyDescription<TEntity> : IEntityReferencePropertyDescription, IPropertyDescription<TEntity>
+        where TEntity : Entity
+    {
+        EntityReference GetReferenceValue(TEntity entity);
+        void SetReferenceValue(EntityReference value, TEntity entity);
+        ValidationResult ValidateValue(TEntity entity, EntityReference value);
+    }
+}
