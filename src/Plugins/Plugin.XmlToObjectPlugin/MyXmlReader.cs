@@ -11,8 +11,8 @@ namespace XmlToObjectPlugin
 {
     class MyXmlReader : XmlTextReader
     {
-        private bool readingDate = false;
-        const string CustomUtcDateTimeFormat = "ddd, dd MMM yyyy HH:mm:ss K"; // Thu, 13 Dec 2012 21:02:00 GMT
+        private bool _readingDate = false;
+        const string CUSTOM_UTC_DATE_TIME_FORMAT = "ddd, dd MMM yyyy HH:mm:ss K"; // Thu, 13 Dec 2012 21:02:00 GMT
 
         
 
@@ -21,29 +21,19 @@ namespace XmlToObjectPlugin
         public MyXmlReader(string inputUri) : base(inputUri) { }
 
         public override DateTime ReadContentAsDateTime()
-        {
-            return base.ReadContentAsDateTime();
-        }
+            => base.ReadContentAsDateTime();
 
         public override object ReadContentAs(Type returnType, IXmlNamespaceResolver namespaceResolver)
-        {
-            return base.ReadContentAs(returnType, namespaceResolver);
-        }
+            => base.ReadContentAs(returnType, namespaceResolver);
 
         public override object ReadElementContentAs(Type returnType, IXmlNamespaceResolver namespaceResolver)
-        {
-            return base.ReadElementContentAs(returnType, namespaceResolver);
-        }
+            => base.ReadElementContentAs(returnType, namespaceResolver);
 
         public override DateTime ReadElementContentAsDateTime()
-        {
-            return base.ReadElementContentAsDateTime();
-        }
+            => base.ReadElementContentAsDateTime();
 
         public override DateTime ReadElementContentAsDateTime(string localName, string namespaceURI)
-        {
-            return base.ReadElementContentAsDateTime(localName, namespaceURI);
-        }
+            => base.ReadElementContentAsDateTime(localName, namespaceURI);
 
         public override void ReadStartElement()
         {            
@@ -53,31 +43,31 @@ namespace XmlToObjectPlugin
                 (string.Equals(base.LocalName, "lastBuildDate", StringComparison.InvariantCultureIgnoreCase) ||
                 string.Equals(base.LocalName, "pubDate", StringComparison.InvariantCultureIgnoreCase)))
             {
-                readingDate = true;
+                _readingDate = true;
             }
             base.ReadStartElement();            
         }
 
         public override void ReadEndElement()
         {
-            if (readingDate)
+            if (_readingDate)
             {
-                readingDate = false;
+                _readingDate = false;
             }
             base.ReadEndElement();
         }
 
         public override string ReadString()
         {
-            if (readingDate)
+            if (_readingDate)
             {
-                string dateString = base.ReadString();
-                DateTime dt = DateTime.Now;
+                var dateString = base.ReadString();
+                var dt = DateTime.Now;
                 if (!string.IsNullOrEmpty(dateString))
                 {
                     if (!DateTime.TryParse(dateString, out dt))
                     {
-                        dt = DateTime.ParseExact(dateString, CustomUtcDateTimeFormat, CultureInfo.InvariantCulture);
+                        dt = DateTime.ParseExact(dateString, CUSTOM_UTC_DATE_TIME_FORMAT, CultureInfo.InvariantCulture);
                     }
                 }
                 return dt.ToUniversalTime().ToString("R", CultureInfo.InvariantCulture);

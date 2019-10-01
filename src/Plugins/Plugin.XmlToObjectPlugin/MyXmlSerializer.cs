@@ -14,9 +14,7 @@ namespace XmlToObjectPlugin
         { }
 
         public override bool CanDeserialize(System.Xml.XmlReader xmlReader)
-        {
-            return base.CanDeserialize(xmlReader);
-        }
+            => base.CanDeserialize(xmlReader);
 
         protected override XmlSerializationReader CreateReader()
         {
@@ -25,8 +23,6 @@ namespace XmlToObjectPlugin
         }
 
         protected override object Deserialize(XmlSerializationReader reader)
-        {
-            return base.Deserialize(reader);
-        }
+            => base.Deserialize(reader);
     }
 }

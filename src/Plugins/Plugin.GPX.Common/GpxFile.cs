@@ -4,6 +4,7 @@ using System.Xml;
 
 namespace GPX.Common
 {
+#pragma warning disable IDE1006 // Benennungsstile
     public class GpxFile
     {
         public string Version { get; set; }
@@ -81,6 +82,7 @@ namespace GPX.Common
         public GpxEmail Email { get; set; }
 
         public GpxLink link { get; set; }
+
     }
 
     public class GpxEmail
@@ -158,5 +160,7 @@ namespace GPX.Common
 
         public List<GpxLink> Link { get; set; }
     }
+
+#pragma warning restore IDE1006 // Benennungsstile
 }
 

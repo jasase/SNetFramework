@@ -110,3 +110,6 @@ dotnet_naming_style.camel_case.capitalization                       = camel_case
 dotnet_naming_style.upper_case.capitalization                       = all_upper
 dotnet_naming_style.upper_case.word_separator                       = _
 
+
+# CA1819: Properties should not return arrays
+dotnet_diagnostic.CA1819.severity = none

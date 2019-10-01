@@ -1,13 +1,7 @@
 ﻿using Framework.Contracts.Extension;
-using Framework.Contracts.Extension.EventService;
 using Framework.Contracts.IocContainer;
 using Framework.Contracts.Plugins;
 using Framework.Contracts.Services.XmlToObject;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XmlToObjectPlugin
 {
