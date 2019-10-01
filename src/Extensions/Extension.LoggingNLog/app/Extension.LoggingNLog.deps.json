@@ -1,0 +1,95 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": "44dd42417dccaa161864508aa91bd722e0e6d225"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "Extension.LoggingNLog/1.0.0": {
+        "dependencies": {
+          "Framework.Contracts": "1.0.0",
+          "NETStandard.Library": "2.0.3",
+          "NLog.Config": "4.5.6"
+        },
+        "runtime": {
+          "Extension.LoggingNLog.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "NLog/4.5.6": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.5.6.7874"
+          }
+        }
+      },
+      "NLog.Config/4.5.6": {
+        "dependencies": {
+          "NLog": "4.5.6",
+          "NLog.Schema": "4.5.6"
+        }
+      },
+      "NLog.Schema/4.5.6": {},
+      "Framework.Contracts/1.0.0": {
+        "runtime": {
+          "Framework.Contracts.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Extension.LoggingNLog/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J7wkPbGQA7HLyeh2LFw9fyZ6/DMoiA09paaso/kK/tM2TMXCw6zryfp5zvycqhf+d3wecs67x++LE77UOs2OaA==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "NLog/4.5.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FZIdeH92NTu6ePm+QbLT9pyd5vY9B+GYX8S2bh6ZxJC+XSTZDhZ6EHWxDzyBIEjtIb+nSBJfIgdMuQNQEYMqbQ==",
+      "path": "nlog/4.5.6",
+      "hashPath": "nlog.4.5.6.nupkg.sha512"
+    },
+    "NLog.Config/4.5.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bfGBl23xtDmUcRc+HSyjmqgQJViEydjUvUzgWDqI08boShAPvufEyf/DDUhz987nD0n1olv2vCxsnHSdL3XpSA==",
+      "path": "nlog.config/4.5.6",
+      "hashPath": "nlog.config.4.5.6.nupkg.sha512"
+    },
+    "NLog.Schema/4.5.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sv/vdbTMzIQbzqGBCF8wwanszdAtfiBaZwujpdcZomGyy8qkbQ4aG6dGFbpAx9B7to9w2RLpMpX1TMAXHLaORw==",
+      "path": "nlog.schema/4.5.6",
+      "hashPath": "nlog.schema.4.5.6.nupkg.sha512"
+    },
+    "Framework.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

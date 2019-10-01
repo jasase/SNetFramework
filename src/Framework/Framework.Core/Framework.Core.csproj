@@ -1,12 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup Label="Globals">
-    <SccProjectName>%24/Privat/MiniFramework/Framework.Common</SccProjectName>
-    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
-    <SccAuxPath>https://sternheim.visualstudio.com</SccAuxPath>
-    <SccLocalPath>.</SccLocalPath>
-  </PropertyGroup>
-
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
