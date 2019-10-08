@@ -9,6 +9,7 @@ using Framework.Abstraction.Extension;
 using Framework.Abstraction.IocContainer;
 using Framework.Abstraction.Plugins;
 using StructureMap;
+using System.Linq;
 
 namespace Framework.Core
 {
@@ -156,6 +157,7 @@ namespace Framework.Core
 
             var pluginDir = Path.Combine(_assemblyPath, _folderPlugins);
 
+            Logger.Debug("Scanning Assemblies from path {pluginDir}", pluginDir);
             if (Directory.Exists(pluginDir))
             {
                 StructureMapContainer.Configure(cfg => cfg.Scan(scanner =>
@@ -166,16 +168,20 @@ namespace Framework.Core
                         {
                             if (!loadedAssemblie.IsDynamic && loadedAssemblie.Location.Contains(_assemblyPath))
                             {
+                                Logger.Debug("Scanning Assemblies {assembly}", loadedAssemblie.Location);
                                 scanner.Assembly(loadedAssemblie);
                             }
                         }
 
-
-                        foreach (var subDir in Directory.GetDirectories(pluginDir))
+                        foreach (var subDir in Directory.GetDirectories(pluginDir)
+                                                        .Concat(new string[] { pluginDir }))
                         {
-                            scanner.AssembliesAndExecutablesFromPath(subDir, (string x) => true);
+                            scanner.AssembliesAndExecutablesFromPath(subDir, (string x) =>
+                            {
+                                Logger.Debug("Scanning Assemblies {assembly}", x);
+                                return true;
+                            });
                         }
-
 
                         scanner.AddAllTypesOf<IGeneralPlugin>();
                         scanner.AddAllTypesOf<ISetting>();
