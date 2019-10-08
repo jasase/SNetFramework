@@ -160,6 +160,8 @@ namespace Framework.Core
             {
                 StructureMapContainer.Configure(cfg => cfg.Scan(scanner =>
                     {
+                        scanner.TheCallingAssembly();
+
                         foreach (var loadedAssemblie in AppDomain.CurrentDomain.GetAssemblies())
                         {
                             if (!loadedAssemblie.IsDynamic && loadedAssemblie.Location.Contains(_assemblyPath))
@@ -171,7 +173,7 @@ namespace Framework.Core
 
                         foreach (var subDir in Directory.GetDirectories(pluginDir))
                         {
-                            scanner.AssembliesFromPath(subDir, (string x) => true);
+                            scanner.AssembliesAndExecutablesFromPath(subDir, (string x) => true);
                         }
 
 
