@@ -14,8 +14,8 @@ namespace Framework.Core
 {
     public class Bootstrap
     {
-        protected const string DEFAULT_FOLDER_EXTENSIONS = "Extensions";
-        protected const string DEFAULT_FOLDER_PLUGINS = "Plugins";
+        protected const string DEFAULT_FOLDER_EXTENSIONS = ".";
+        protected const string DEFAULT_FOLDER_PLUGINS = ".";
 
         private readonly Action<string> _messageListener;
         private readonly string _assemblyPath;
