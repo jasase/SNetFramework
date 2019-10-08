@@ -12,7 +12,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{612DDD5E-BC74-4F62-9019-AC5C06C560AC}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		..\azure-pipelines.yml = ..\azure-pipelines.yml
 		Directory.Build.props = Directory.Build.props
+		..\gitversion.yml = ..\gitversion.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{7EBB0C55-64A1-4454-91AB-AD29BAA9A67D}"
