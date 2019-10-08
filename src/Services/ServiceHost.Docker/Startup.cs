@@ -4,9 +4,9 @@ using Topshelf;
 
 namespace ServiceHost.Docker
 {
-    public abstract class Program
+    public abstract class Startup
     {
-        protected void Main(string[] args)
+        protected void Run(string[] args)
         {
             Console.WriteLine("Start");
             var pluginsToLoad = new List<string>();

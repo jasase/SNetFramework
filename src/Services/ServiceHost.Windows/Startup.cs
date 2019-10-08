@@ -5,16 +5,16 @@ using Topshelf;
 namespace ServiceHost
 {
 
-    public abstract class Program
+    public abstract class Startup
     {
         private readonly string _serviceName;
 
-        public Program(string serviceName)
+        public Startup(string serviceName)
         {
             _serviceName = serviceName;
         }
 
-        protected void Main(string[] args)
+        protected void Run(string[] args)
             => HostFactory.Run(x =>
             {
                 x.SetDisplayName(_serviceName);
