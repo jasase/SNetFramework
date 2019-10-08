@@ -106,6 +106,24 @@ namespace GPX.Common
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public double Altitude { get; set; }
+
+        public double DistanceTo(GpxCoordinate targetCoordinates)
+        {
+            var baseRad = Math.PI * Latitude / 180;
+            var targetRad = Math.PI * targetCoordinates.Latitude / 180;
+            var theta = Longitude - targetCoordinates.Longitude;
+            var thetaRad = Math.PI * theta / 180;
+
+            var dist =
+                Math.Sin(baseRad) * Math.Sin(targetRad) + Math.Cos(baseRad) *
+                Math.Cos(targetRad) * Math.Cos(thetaRad);
+            dist = Math.Acos(dist);
+
+            dist = dist * 180 / Math.PI;
+            dist = dist * 60 * 1.1515;
+
+            return dist * 1.609344; //Conversion from miles to km;
+        }
     }
 
     public class GpxWaypoint
