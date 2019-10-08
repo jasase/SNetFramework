@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <area>
+    <name>dynDns</name>
+    <setting>
+      <key>hostname</key>
+      <value>horsten.sternheim.eu</value>      
+    </setting>    
+    <setting>
+      <key>username</key>
+      <value>horsten.sternheim.eu</value>
+    </setting>
+  </area>
+  <area>
+    <name>t</name>    
+    <setting>
+      <key>hostname</key>
+      <value>horsten.sternheim.eu</value>
+    </setting>
+    <setting>
+      <key>username</key>
+      <value>horsten.sternheim.eu</value>
+    </setting>        
+  <algorithm>
+    <key>ipcrawler</key>
+    <name>Test</name>
+  </algorithm>    
+  </area>
+</configuration>

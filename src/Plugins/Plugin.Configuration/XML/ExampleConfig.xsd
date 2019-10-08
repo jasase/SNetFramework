@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="configuration" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="configuration" msdata:IsDataSet="true" msdata:Locale="en-US">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="area">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:ID" minOccurs="0" />
+              
+              <xs:choice minOccurs="1" maxOccurs="unbounded">
+                <xs:element name="setting" minOccurs="0" maxOccurs="unbounded" type="setting" />                
+                <xs:element name="algorithm" minOccurs="0" maxOccurs="unbounded" type="algorithm" />
+              </xs:choice>
+            
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+<xs:complexType name="setting">
+  <xs:sequence>
+    <xs:element name="key" type="xs:string" minOccurs="1" maxOccurs="1" />
+    <xs:element name="value" type="xs:string" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="algorithm">
+  <xs:sequence>
+    <xs:element name="key" type="xs:string" minOccurs="1" maxOccurs="1" />
+    <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
+    <xs:element name="setting" minOccurs="0" maxOccurs="unbounded" type="setting" />
+  </xs:sequence>
+</xs:complexType>
+
+</xs:schema>
