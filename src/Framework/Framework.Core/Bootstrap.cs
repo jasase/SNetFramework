@@ -35,15 +35,15 @@ namespace Framework.Core
 
 
         public Bootstrap()
-            : this(null, new Type[0])
+            : this(null, Array.Empty<Type>())
         { }
 
         public Bootstrap(Action<string> messageListener)
-            : this(messageListener, new Type[0])
+            : this(messageListener, Array.Empty<Type>())
         { }
 
         public Bootstrap(Action<string> messageListener, Type[] pluginTypes)
-            : this(messageListener, new Type[0], DEFAULT_FOLDER_EXTENSIONS, DEFAULT_FOLDER_PLUGINS)
+            : this(messageListener, pluginTypes, DEFAULT_FOLDER_EXTENSIONS, DEFAULT_FOLDER_PLUGINS)
         { }
 
         public Bootstrap(Action<string> messageListener,
