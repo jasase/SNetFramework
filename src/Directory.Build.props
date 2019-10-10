@@ -2,6 +2,8 @@
  <PropertyGroup>
    <Deterministic>true</Deterministic>
 
+   <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
    <PackageProjectUrl>https://github.com/jasase/SNetFramework</PackageProjectUrl>
 
    <PublishRepositoryUrl>true</PublishRepositoryUrl>   
