@@ -5,40 +5,40 @@ using ConfigurationPlugin.Configuration;
 using Framework.Abstraction.Extension;
 using Framework.Abstraction.Services.XmlToObject;
 using Framework.Abstraction.Services;
+using Plugin.Configuration;
 
-namespace ConfigurationPlugin
+namespace Plugin.Configuration.Loaders
 {
-    public class ConfigurationLoader
+    public class ConfigurationLoader : IConfigurationLoader
     {
-        private readonly IXmlToObject _XmlToObject;
-        private readonly ILogger _Logger;
+        private const string CONFIG_FILENAME = "config.xml";
+
+        private readonly IXmlToObject _xmlToObject;
+        private readonly ILogger _logger;
         private readonly IEnvironmentParameters _parameter;
-        private const string ConfigFilename = "config.xml";
 
         public ConfigurationLoader(IXmlToObject xmlToObject, ILogger logger, IEnvironmentParameters parameter)
         {
-            if (xmlToObject == null) throw new ArgumentNullException("xmlToObject");
-            if (logger == null) throw new ArgumentNullException("logger");
-            _XmlToObject = xmlToObject;
-            _Logger = logger;
+            _xmlToObject = xmlToObject ?? throw new ArgumentNullException(nameof(xmlToObject));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _parameter = parameter;
         }
 
         public IEnumerable<Area> LoadConfiguration()
         {
-            var configPath = Path.Combine(_parameter.ConfigurationDirectory.FullName, ConfigFilename);
+            var configPath = Path.Combine(_parameter.ConfigurationDirectory.FullName, CONFIG_FILENAME);
             if (File.Exists(configPath))
             {
                 configuration configuration = null;
 
                 try
                 {
-                    _Logger.Info("Loading configuration from path '{0}'", configPath);
-                    configuration = _XmlToObject.ReadXml<configuration>(configPath);
+                    _logger.Info("Loading configuration from path '{0}'", configPath);
+                    configuration = _xmlToObject.ReadXml<configuration>(configPath);
                 }
                 catch (Exception excpetion)
                 {
-                    _Logger.Error(excpetion, "Error during parsing configurationfile at [{0}]", configPath);
+                    _logger.Error(excpetion, "Error during parsing configurationfile at [{0}]", configPath);
                 }
 
                 if (configuration != null)
@@ -48,15 +48,15 @@ namespace ConfigurationPlugin
                     {
                         if (areaKeys.Contains(area.name))
                         {
-                            _Logger.Error("Configuration [{0}] contains more than one area with name [{1}]. Area will be ignored", configPath, area.name);
+                            _logger.Error("Configuration [{0}] contains more than one area with name [{1}]. Area will be ignored", configPath, area.name);
                             continue;
                         }
                         areaKeys.Add(area.name);
                         var areaElementKeys = new List<string>(area.Items.Length);
                         var areaObject = new Area()
-                                             {
-                                                 Name = area.name
-                                             };
+                        {
+                            Name = area.name
+                        };
                         foreach (var item in area.Items)
                         {
                             var algorithm = item as algorithm;
@@ -77,7 +77,7 @@ namespace ConfigurationPlugin
             }
             else
             {
-                _Logger.Info("No configurationfile found at location [{0}]", configPath);
+                _logger.Info("No configurationfile found at location [{0}]", configPath);
             }
         }
 
@@ -88,10 +88,10 @@ namespace ConfigurationPlugin
                 return;
             areaObject.Elements.Add(
                 new Setting
-                    {
-                        Value = setting.value,
-                        Key = setting.key
-                    });
+                {
+                    Value = setting.value,
+                    Key = setting.key
+                });
         }
 
         private bool HandleAlgorithmObject(List<string> areaElementKeys, algorithm algorithm, string configPath, configurationArea area,
@@ -101,20 +101,20 @@ namespace ConfigurationPlugin
                 return true;
             var algorithmKeyList = new List<string>(algorithm.setting.Length);
             var algorithmObject = new Algorithm
-                                      {
-                                          Name = algorithm.name,
-                                          Key = algorithm.key
-                                      };
+            {
+                Name = algorithm.name,
+                Key = algorithm.key
+            };
             foreach (var algorithmSetting in algorithm.setting)
             {
                 if (!algorithmKeyList.Contains(algorithmSetting.key))
                 {
                     algorithmObject.Settings.Add(
                         new Setting()
-                            {
-                                Key = algorithmSetting.key,
-                                Value = algorithmSetting.value
-                            });
+                        {
+                            Key = algorithmSetting.key,
+                            Value = algorithmSetting.value
+                        });
                 }
             }
             areaObject.Elements.Add(algorithmObject);
@@ -126,7 +126,7 @@ namespace ConfigurationPlugin
         {
             if (areaElementKeys.Contains(elementName))
             {
-                _Logger.Error(
+                _logger.Error(
                     "Configuration [{0}] contains more than one element in area [{1}] with name [{2}]. Element will be ignored",
                     configPath, area.name, elementName);
                 return true;

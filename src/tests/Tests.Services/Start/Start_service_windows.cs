@@ -20,7 +20,7 @@ namespace Tests.Services
         [Fact]
         public void Should_start_and_stop_without_error()
         {
-            _bootstrap.StartingService();
+            _bootstrap.StartingService();            
 
             DummyPlugin.StartCounter.Should().Be(1);
 

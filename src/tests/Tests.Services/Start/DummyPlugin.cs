@@ -4,11 +4,12 @@ using System.Text;
 using Framework.Abstraction.Extension;
 using Framework.Abstraction.IocContainer;
 using Framework.Abstraction.Plugins;
+using Framework.Abstraction.Services;
 using ServiceHost.Contracts;
 
 namespace Tests.Services.Start
 {
-    public class DummyPlugin : Plugin, IServicePlugin
+    public class DummyPlugin : Framework.Abstraction.Plugins.Plugin, IServicePlugin
     {
         public static int StartCounter { get; set; } = 0;
 
@@ -21,7 +22,11 @@ namespace Tests.Services.Start
 
         public override PluginDescription Description => new AutostartServicePluginDescription
         {
-            Name = "Test"
+            Name = "Test",
+            NeededServices = new[]
+            {
+                typeof(IConfiguration)
+            }
         };
 
         protected override void ActivateInternal()

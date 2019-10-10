@@ -8,10 +8,11 @@ using ConfigurationPlugin.Configuration;
 using System.Text;
 using System;
 using Framework.Abstraction.IocContainer;
+using Plugin.Configuration.Loaders;
 
 namespace ConfigurationPlugin
 {
-    public class ConfigurationPlugin : Plugin, IGeneralPlugin
+    public class ConfigurationPlugin : Framework.Abstraction.Plugins.Plugin, IGeneralPlugin
     {
 
         private readonly PluginDescription _description;
@@ -33,7 +34,9 @@ namespace ConfigurationPlugin
         protected override void ActivateInternal()
         {
             var loader = Resolver.CreateConcreteInstanceWithDependencies<ConfigurationLoader>();
-            var settingValues = loader.LoadConfiguration().ToList();
+            var envLloader = Resolver.CreateConcreteInstanceWithDependencies<EnvConfigurationLoader>();
+            var settingValues = loader.LoadConfiguration()
+                                      .Concat(envLloader.LoadConfiguration()).ToList();
 
             LogLoadedConfiguration(settingValues);
 
@@ -63,12 +66,6 @@ namespace ConfigurationPlugin
                 var visitor = new LogElementVisitor(builder, deep, i == elements.Count - 1);
                 element.Accept(visitor);
             }
-        }
-
-        private string CreateIdent(int deep)
-        {
-            var chars = Enumerable.Range(0, deep * 5).Select(x => ' ').ToArray();
-            return new String(chars);
         }
 
         private class LogElementVisitor : IAreaElementVisitor
