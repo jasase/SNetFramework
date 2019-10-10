@@ -44,6 +44,7 @@ steps:
   inputs:
     command: 'build'
     projects: '$(solution)'
+    arguments: '/p:AssemblyVersion=$(GitVersion.ASSEMBLYSEMFILEVER)'
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -55,9 +56,10 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '$(solution)'
-    packDirectory: '$(Build.ArtifactStagingDirectory)/NuGet'    
+    packDirectory: '$(Build.ArtifactStagingDirectory)/NuGet'
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'GitVersion.NuGetVersion'
+    buildProperties: '/p:AssemblyVersion=$(GitVersion.ASSEMBLYSEMFILEVER)'
 
 - task: PublishBuildArtifacts@1
   inputs:
