@@ -18,13 +18,10 @@ namespace ServiceHost.Docker
         public void StartingService(IEnumerable<string> pluginsToLoad)
         {
             try
-            {
-                var cliArgs = new HashSet<string>(pluginsToLoad.Select(x => x.ToUpperInvariant()));
-
+            {                
                 Init();
 
-                var pluginsToActivate = Plugins.Where(x => cliArgs.Contains(x.Name.ToUpperInvariant()))
-                                               .ToArray();
+                var pluginsToActivate = Plugins.Where(x => x.GetType() == typeof(AutostartServicePluginDescription)).ToArray();
 
                 if (pluginsToActivate.Any())
                 {
