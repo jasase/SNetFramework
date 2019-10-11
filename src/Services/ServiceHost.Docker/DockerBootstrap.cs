@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Framework.Core;
 using Framework.Abstraction.Extension;
-using Framework.Abstraction.Messages;
+using Framework.Abstraction.Messages; 
 using ServiceHost.Contracts;
 
 namespace ServiceHost.Docker
