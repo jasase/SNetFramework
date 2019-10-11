@@ -47,7 +47,7 @@ steps:
     arguments: '/p:AssemblyVersion=$(GitVersion.ASSEMBLYSEMFILEVER)'
 
 - task: DotNetCoreCLI@2
-displayName: "Test"
+  displayName: "Test"
   inputs:
     command: 'test'
     projects: '$(solution)'
