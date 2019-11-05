@@ -27,7 +27,6 @@ namespace Extension.EnvironmentParameterDocker
                 ApplicationDirectory = new DirectoryInfo(@"/app");
             }
 
-
             ExecutablePath = new FileInfo(Assembly.GetExecutingAssembly().Location);
 
             if (!ConfigurationDirectory.Exists)
