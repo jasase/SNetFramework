@@ -58,9 +58,10 @@ steps:
     command: 'pack'
     packagesToPack: '$(solution)'
     packDirectory: '$(Build.ArtifactStagingDirectory)/NuGet'
+    includesymbols: true
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'GitVersion.NuGetVersion'
-    buildProperties: '--no-build --include-symbols'
+    buildProperties: 'AssemblyVersion=$(GitVersion.ASSEMBLYSEMFILEVER)'
 
 - task: PublishBuildArtifacts@1
   inputs:
