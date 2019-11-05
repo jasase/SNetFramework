@@ -14,8 +14,7 @@ variables:
   solution: 'src/SNetFramework.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-
-
+  
 steps:
 
 - task: GitVersion@5
