@@ -14,8 +14,7 @@ variables:
   solution: 'src/SNetFramework.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-
-
+  
 steps:
 
 - task: GitVersion@5
@@ -44,15 +43,24 @@ steps:
   inputs:
     command: 'build'
     projects: '$(solution)'
+    arguments: '/p:AssemblyVersion=$(GitVersion.ASSEMBLYSEMFILEVER)'
+
+- task: DotNetCoreCLI@2
+  displayName: "Test"
+  inputs:
+    command: 'test'
+    projects: '$(solution)'
 
 - task: DotNetCoreCLI@2
   displayName: "Pack NuGet packages"
   inputs:
     command: 'pack'
     packagesToPack: '$(solution)'
-    packDirectory: '$(Build.ArtifactStagingDirectory)/NuGet'    
+    packDirectory: '$(Build.ArtifactStagingDirectory)/NuGet'
+    includesymbols: true
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'GitVersion.NuGetVersion'
+    buildProperties: 'AssemblyVersion=$(GitVersion.ASSEMBLYSEMFILEVER)'
 
 - task: PublishBuildArtifacts@1
   inputs:

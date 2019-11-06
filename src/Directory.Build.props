@@ -2,18 +2,23 @@
  <PropertyGroup>
    <Deterministic>true</Deterministic>
 
+   <!--<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>-->
+
    <PackageProjectUrl>https://github.com/jasase/SNetFramework</PackageProjectUrl>
 
    <PublishRepositoryUrl>true</PublishRepositoryUrl>   
    <EmbedUntrackedSources>true</EmbedUntrackedSources>
 
-   <IncludeSymbols>true</IncludeSymbols>
-   <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+   <!--<IncludeSymbols>true</IncludeSymbols>
+   <SymbolPackageFormat>snupkg</SymbolPackageFormat>-->
+  
+   <DebugType>embedded</DebugType>
+   <DebugSymbols>true</DebugSymbols>
    
  </PropertyGroup>
 
  <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01" PrivateAssets="All"/>
   </ItemGroup>
 

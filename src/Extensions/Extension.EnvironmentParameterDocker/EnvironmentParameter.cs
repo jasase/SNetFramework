@@ -1,5 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using Framework.Abstraction.Extension;
 
 namespace Extension.EnvironmentParameterDocker
@@ -14,8 +16,17 @@ namespace Extension.EnvironmentParameterDocker
 
         public EnvironmentParameter()
         {
-            ConfigurationDirectory = new DirectoryInfo(@"C:\Configuration");
-            ApplicationDirectory = new DirectoryInfo(@"C:\App");
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                ConfigurationDirectory = new DirectoryInfo(@"C:\Configuration");
+                ApplicationDirectory = new DirectoryInfo(@"C:\App");
+            }
+            else
+            {
+                ConfigurationDirectory = new DirectoryInfo(@"/configuration");
+                ApplicationDirectory = new DirectoryInfo(@"/app");
+            }
+
             ExecutablePath = new FileInfo(Assembly.GetExecutingAssembly().Location);
 
             if (!ConfigurationDirectory.Exists)

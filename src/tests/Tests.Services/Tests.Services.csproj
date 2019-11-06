@@ -15,6 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Plugins\Plugin.Configuration\Plugin.Configuration.csproj" />
+    <ProjectReference Include="..\..\Plugins\Plugin.DataAccess.InfluxDb\Plugin.DataAccess.InfluxDb.csproj" />
+    <ProjectReference Include="..\..\Plugins\Plugin.GPX.Common\Plugin.GPX.Common.csproj" />
+    <ProjectReference Include="..\..\Plugins\Plugin.Scheduling\Plugin.Scheduling.csproj" />
+    <ProjectReference Include="..\..\Plugins\Plugin.ThreadManager\Plugin.ThreadManager.csproj" />
+    <ProjectReference Include="..\..\Plugins\Plugin.XmlToObjectPlugin\Plugin.XmlToObjectPlugin.csproj" />
     <ProjectReference Include="..\..\Services\ServiceHost.Windows\ServiceHost.Windows.csproj" />
   </ItemGroup>
 

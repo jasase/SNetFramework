@@ -218,6 +218,9 @@ namespace Framework.Core
         }
 
         protected void HandleMessage(string message)
-            => _messageListener?.Invoke(message);
+        {
+            Logger?.Debug("Status message: {msg}", message);
+            _messageListener?.Invoke(message);
+        }
     }
 }
