@@ -44,7 +44,14 @@ namespace Plugin.DataAccess.InfluxDb.Services
                         try
                         {
                             _logger.Debug("Uploading entries");
-                            _upload.Write(job.Entries, job.Database);
+                            if (string.IsNullOrEmpty(job.RetentioPolicy))
+                            {
+                                _upload.Write(job.Entries, job.Database);
+                            }
+                            else
+                            {
+                                _upload.Write(job.Entries, job.Database, job.RetentioPolicy);
+                            }
                             _logger.Info("Uploading entries done");
                         }
                         catch (Exception ex)
