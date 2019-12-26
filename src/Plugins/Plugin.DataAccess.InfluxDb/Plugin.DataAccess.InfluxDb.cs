@@ -52,6 +52,10 @@ namespace Plugin.DataAccess.InfluxDb
             var read = new InfluxDbRead(influxDbClient);
             var readRegistration = new SingletonRegistration<IInfluxDbRead>(read);
             ConfigurationResolver.AddRegistration(readRegistration);
+
+            var management = new InfluxDbManagement(influxDbClient, loggerFactory.GetLogger(typeof(InfluxDbManagement)));
+            var managementRegistration = new SingletonRegistration<IInfluxDbManagement>(management);
+            ConfigurationResolver.AddRegistration(managementRegistration);
         }
     }
 }
