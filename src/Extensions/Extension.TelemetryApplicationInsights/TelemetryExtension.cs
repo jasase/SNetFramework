@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Framework.Abstraction.Extension;
 using Framework.Abstraction.IocContainer;
 using Framework.Abstraction.Plugins;
 using Microsoft.ApplicationInsights;
@@ -20,6 +21,11 @@ namespace Extension.TelemetryApplicationInsights
 
             var telemetryClient = new TelemetryClient(appInsightConfig);
             telemetryClient.TrackTrace("Telemetry started");
+
+            var metricRecorder = new TelemetryRecorder(telemetryClient);
+
+            configurator.AddRegistration(new SingletonRegistration<IMetricRecorder>(metricRecorder));
+            configurator.AddRegistration(new SingletonRegistration<TelemetryClient>(telemetryClient));
         }
     }
 }

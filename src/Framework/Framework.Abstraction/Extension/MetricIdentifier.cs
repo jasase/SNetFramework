@@ -13,6 +13,9 @@ namespace Framework.Abstraction.Extension
         public string RegionName { get; }
         public string Identifier { get; }
 
+        public override string ToString()
+            => RegionName + ":" + Identifier;
+
         // override object.Equals
         public override bool Equals(object obj)
         {
