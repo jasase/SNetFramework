@@ -9,7 +9,7 @@ namespace Extension.LoggingNLog
     {
         public string Name => "Extension.LoggingNLog";
 
-        public void Register(IDependencyResolverConfigurator configurator, IDependencyResolver resolver)
+        public void Register(BootstrapInCodeConfiguration configuration, IDependencyResolverConfigurator configurator, IDependencyResolver resolver)
         {
             //Target.Register<Fluentd.Fluentd>("Fluentd");
 

@@ -5,6 +5,6 @@ namespace Framework.Abstraction.Plugins
     public interface IFrameworkExtension
     {
         string Name { get; }
-        void Register(IDependencyResolverConfigurator configurator, IDependencyResolver resolver);
+        void Register(BootstrapInCodeConfiguration configuration, IDependencyResolverConfigurator configurator, IDependencyResolver resolver);
     }
 }

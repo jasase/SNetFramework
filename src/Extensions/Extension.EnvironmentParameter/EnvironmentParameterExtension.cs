@@ -8,7 +8,7 @@ namespace Extension.EnvironmentParameter
     {        
         public string Name => "Extension.EnvironmentParameter";
 
-        public void Register(IDependencyResolverConfigurator configurator, IDependencyResolver resolver)
+        public void Register(BootstrapInCodeConfiguration configuration, IDependencyResolverConfigurator configurator, IDependencyResolver resolver)
         {
             var parameter = new EnvironmentParameter();
             var registration = new SingletonRegistration<IEnvironmentParameters>(parameter);

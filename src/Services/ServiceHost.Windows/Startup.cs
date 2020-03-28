@@ -1,4 +1,5 @@
 ﻿using System;
+using Framework.Abstraction.Plugins;
 using Service;
 using Topshelf;
 
@@ -14,7 +15,7 @@ namespace ServiceHost
             _serviceName = serviceName;
         }
 
-        protected void Run(string[] args)
+        protected void Run(string[] args, BootstrapInCodeConfiguration configuration)
             => HostFactory.Run(x =>
             {
                 x.SetDisplayName(_serviceName);
@@ -22,7 +23,7 @@ namespace ServiceHost
                 x.UseNLog();
                 x.Service<ServiceBootstrap>(sc =>
                 {
-                    sc.ConstructUsing(() => new ServiceBootstrap());
+                    sc.ConstructUsing(() => new ServiceBootstrap(configuration));
                     sc.WhenStarted(s => s.StartingService());
                     sc.WhenStopped(s =>
                     {

@@ -15,9 +15,6 @@ namespace Framework.Core
 {
     public class Bootstrap
     {
-        protected const string DEFAULT_FOLDER_EXTENSIONS = ".";
-        protected const string DEFAULT_FOLDER_PLUGINS = ".";
-
         private readonly Action<string> _messageListener;
         private readonly string _assemblyPath;
         private readonly Type[] _pluginTypes;
@@ -34,33 +31,18 @@ namespace Framework.Core
         public IEnumerable<PluginDescription> Plugins => _loader.Plugins;
 
 
-        public Bootstrap()
-            : this(null, Array.Empty<Type>())
-        { }
-
-        public Bootstrap(Action<string> messageListener)
-            : this(messageListener, Array.Empty<Type>())
-        { }
-
-        public Bootstrap(Action<string> messageListener, Type[] pluginTypes)
-            : this(messageListener, pluginTypes, DEFAULT_FOLDER_EXTENSIONS, DEFAULT_FOLDER_PLUGINS)
-        { }
-
-        public Bootstrap(Action<string> messageListener,
-                         Type[] pluginTypes,
-                         string folderExtensions,
-                         string folderPlugins)
+        public Bootstrap(BootstrapInCodeConfiguration configuration)
         {
             Thread.CurrentThread.Name = "Main";
 
-            _messageListener = messageListener;
-            _pluginTypes = pluginTypes;
-            _folderExtensions = folderExtensions;
-            _folderPlugins = folderPlugins;
+            _messageListener = configuration.MessageListner.FirstOrDefault(); ;
+            _pluginTypes = configuration.PluginTypes.ToArray(); ;
+            _folderExtensions = configuration.FolderExtensionPath;
+            _folderPlugins = configuration.PluginPath;
             _assemblyPath = Path.GetDirectoryName(GetType().Assembly.Location);
 
             IntializeIocContainer();
-            LoadFrameworkExtensions();
+            LoadFrameworkExtensions(configuration);
 
             Logger = DependencyResolver.GetInstance<ILogManager>().GetLogger(GetType());
             AppDomain.CurrentDomain.UnhandledException += (s, e) =>
@@ -125,7 +107,7 @@ namespace Framework.Core
             });
         }
 
-        private void LoadFrameworkExtensions()
+        private void LoadFrameworkExtensions(BootstrapInCodeConfiguration configuration)
         {
             HandleMessage("Scanne nach Extensions");
             var extensionDir = Path.Combine(_assemblyPath, _folderExtensions);
@@ -146,7 +128,7 @@ namespace Framework.Core
                 foreach (var instance in DependencyResolver.GetAllInstances<IFrameworkExtension>())
                 {
                     HandleMessage("Lade Extension " + instance.Name);
-                    instance.Register(DependencyResolverConfigurator, DependencyResolver);
+                    instance.Register(configuration, DependencyResolverConfigurator, DependencyResolver);
                 }
             }
         }

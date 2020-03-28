@@ -8,7 +8,7 @@ namespace Extension.Event
     {
         public string Name => "Extension.Event";
 
-        public void Register(IDependencyResolverConfigurator configurator, IDependencyResolver resolver)
+        public void Register(BootstrapInCodeConfiguration configuration, IDependencyResolverConfigurator configurator, IDependencyResolver resolver)
             => configurator.AddRegistration(new SingletonRegistration<IEventService, EventService>());
     }
 }

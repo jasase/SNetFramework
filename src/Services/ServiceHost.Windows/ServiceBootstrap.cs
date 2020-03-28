@@ -4,13 +4,14 @@ using Framework.Core;
 using Framework.Abstraction.Extension;
 using Framework.Abstraction.Messages;
 using ServiceHost.Contracts;
+using Framework.Abstraction.Plugins;
 
 namespace Service
 {
     public class ServiceBootstrap : Bootstrap
     {
-        public ServiceBootstrap()
-            : base(null, new[] { typeof(IServicePlugin) })
+        public ServiceBootstrap(BootstrapInCodeConfiguration configuration)
+            : base(configuration.AddPluginType<IServicePlugin>())
         { }
 
         public void StartingService()
@@ -31,11 +32,11 @@ namespace Service
             {
                 Logger.Error(ex, "An error occured during starting the service");
                 //TODO Shutdown System
-            }            
+            }
         }
 
         public void StopingService()
-        {            
+        {
             try
             {
                 var eventService = DependencyResolver.GetInstance<IEventService>();
@@ -43,8 +44,8 @@ namespace Service
             }
             catch (Exception ex)
             {
-                Logger.Error(ex,"An error occured during service shutdown");
-            }            
+                Logger.Error(ex, "An error occured during service shutdown");
+            }
         }
     }
 }

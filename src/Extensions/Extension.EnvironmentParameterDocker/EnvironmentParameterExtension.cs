@@ -8,7 +8,7 @@ namespace Extension.EnvironmentParameterDocker
     {        
         public string Name => "Extension.EnvironmentParameterDocker";
 
-        public void Register(IDependencyResolverConfigurator configurator, IDependencyResolver resolver)
+        public void Register(BootstrapInCodeConfiguration configuration, IDependencyResolverConfigurator configurator, IDependencyResolver resolver)
         {
             var parameter = new EnvironmentParameter();
             var registration = new SingletonRegistration<IEnvironmentParameters>(parameter);

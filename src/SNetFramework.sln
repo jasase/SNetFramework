@@ -53,7 +53,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plugin.DataAccess.InfluxDb"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plugin.ThreadManager", "Plugins\Plugin.ThreadManager\Plugin.ThreadManager.csproj", "{86561282-7006-4789-A38D-E47628AA9745}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.DataAccess.MongoDb", "Plugins\Plugin.DataAccess.MongoDb\Plugin.DataAccess.MongoDb.csproj", "{7FCF5868-99C8-418F-961C-545F9B1181BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plugin.DataAccess.MongoDb", "Plugins\Plugin.DataAccess.MongoDb\Plugin.DataAccess.MongoDb.csproj", "{7FCF5868-99C8-418F-961C-545F9B1181BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extension.TelemetryApplicationInsights", "Extensions\Extension.TelemetryApplicationInsights\Extension.TelemetryApplicationInsights.csproj", "{0566E281-E626-4310-A33A-19C0EC63135C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +131,10 @@ Global
 		{7FCF5868-99C8-418F-961C-545F9B1181BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FCF5868-99C8-418F-961C-545F9B1181BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FCF5868-99C8-418F-961C-545F9B1181BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0566E281-E626-4310-A33A-19C0EC63135C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0566E281-E626-4310-A33A-19C0EC63135C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0566E281-E626-4310-A33A-19C0EC63135C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0566E281-E626-4310-A33A-19C0EC63135C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,6 +157,7 @@ Global
 		{E733BE34-A03A-4A78-AF8B-63346A5BC315} = {F054086A-E7DB-4AD5-B056-4DFD2BDDC8B1}
 		{86561282-7006-4789-A38D-E47628AA9745} = {F054086A-E7DB-4AD5-B056-4DFD2BDDC8B1}
 		{7FCF5868-99C8-418F-961C-545F9B1181BF} = {F054086A-E7DB-4AD5-B056-4DFD2BDDC8B1}
+		{0566E281-E626-4310-A33A-19C0EC63135C} = {7EBB0C55-64A1-4454-91AB-AD29BAA9A67D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F6CDFB1-F725-4927-A122-2A2397C278B5}

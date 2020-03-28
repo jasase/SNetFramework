@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Framework.Abstraction.Plugins;
 using Topshelf;
 
 namespace ServiceHost.Docker
 {
     public abstract class Startup
     {
-        protected void Run(string[] args)
+        protected void Run(string[] args, BootstrapInCodeConfiguration configuration)
         {
             Console.WriteLine("Start");
             var pluginsToLoad = new List<string>();
@@ -15,7 +16,7 @@ namespace ServiceHost.Docker
                 x.UseNLog();
                 x.Service<DockerBootstrap>(svc =>
                 {
-                    svc.ConstructUsing(() => new DockerBootstrap());
+                    svc.ConstructUsing(() => new DockerBootstrap(configuration));
                     svc.WhenStarted(s => s.StartingService(pluginsToLoad));
                     svc.WhenStopped(s => s.StopingService());
                 });

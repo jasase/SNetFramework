@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using Framework.Core;
 using Framework.Abstraction.Extension;
-using Framework.Abstraction.Messages; 
+using Framework.Abstraction.Messages;
 using ServiceHost.Contracts;
+using Framework.Abstraction.Plugins;
 
 namespace ServiceHost.Docker
 {
     public class DockerBootstrap : Bootstrap
     {
-
-        public DockerBootstrap()
-            : base(null, new[] { typeof(IServicePlugin) }, ".", ".")
-        { }
+        public DockerBootstrap(BootstrapInCodeConfiguration configuration)
+            : base(configuration.AddPluginType<IServicePlugin>())
+        {
+        }
 
         public void StartingService(IEnumerable<string> pluginsToLoad)
         {
             try
-            {                
+            {
                 Init();
 
                 var pluginsToActivate = Plugins.Where(x => x.GetType() == typeof(AutostartServicePluginDescription)).ToArray();
