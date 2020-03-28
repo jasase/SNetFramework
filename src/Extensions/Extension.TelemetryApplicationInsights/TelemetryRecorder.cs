@@ -17,6 +17,7 @@ namespace Extension.TelemetryApplicationInsights
         public TelemetryRecorder(TelemetryClient telemetryClient)
         {
             _telemetryClient = telemetryClient;
+            _metrics = new Dictionary<MetricIdentifier, Metric>();
         }
 
         public void CountEvent(MetricIdentifier identifier)
